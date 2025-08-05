@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGIA Sports - Shoe Catalog</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="nav-brand">
+                <h1 class="logo">AGIA Sports</h1>
+                <p class="tagline">Premium Athletic Footwear</p>
+            </div>
+            <nav class="nav">
+                <a href="#catalog" class="nav-link">Catalog</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h2 class="hero-title">Discover Premium Athletic Footwear</h2>
+                    <p class="hero-subtitle">From cricket shoes to soccer cleats, find the perfect pair for your sport</p>
+                    <button class="cta-button" onclick="scrollToCatalog()">
+                        <span>Shop Now</span>
+                        <i class="fas fa-arrow-down"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section id="catalog" class="catalog">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Our Collection</h2>
+                    <p class="section-subtitle">Explore our range of high-quality athletic shoes</p>
+                </div>
+
+                <div class="filters">
+                    <div class="filter-group">
+                        <label for="category-filter">Category:</label>
+                        <select id="category-filter" class="filter-select">
+                            <option value="all">All Products</option>
+                            <option value="cricket">Cricket Shoes</option>
+                            <option value="soccer">Soccer Cleats</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="price-filter">Price Range:</label>
+                        <select id="price-filter" class="filter-select">
+                            <option value="all">All Prices</option>
+                            <option value="low">Under $35</option>
+                            <option value="mid">$35 - $45</option>
+                            <option value="high">$45+</option>
+                        </select>
+                    </div>
+                    <div class="search-group">
+                        <input type="text" id="search-input" placeholder="Search products..." class="search-input">
+                        <i class="fas fa-search search-icon"></i>
+                    </div>
+                </div>
+
+                <div class="product-grid" id="product-grid">
+                    <!-- Products will be dynamically loaded here -->
+                </div>
+
+                <div class="no-results" id="no-results" style="display: none;">
+                    <i class="fas fa-search"></i>
+                    <h3>No products found</h3>
+                    <p>Try adjusting your filters or search terms</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about">
+            <div class="container">
+                <div class="about-content">
+                    <h2 class="section-title">About AGIA Sports</h2>
+                    <p class="about-text">
+                        AGIA Sports is dedicated to providing premium athletic footwear for athletes of all levels. 
+                        Our collection features high-quality cricket shoes and soccer cleats designed for performance, 
+                        comfort, and durability. Whether you're a professional athlete or weekend warrior, 
+                        we have the perfect pair to elevate your game.
+                    </p>
+                    <div class="features">
+                        <div class="feature">
+                            <i class="fas fa-award"></i>
+                            <h3>Premium Quality</h3>
+                            <p>Crafted with the finest materials for lasting performance</p>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-shipping-fast"></i>
+                            <h3>Fast Shipping</h3>
+                            <p>Quick delivery to get you back in the game</p>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-shield-alt"></i>
+                            <h3>Satisfaction Guarantee</h3>
+                            <p>100% satisfaction or your money back</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>AGIA Sports</h3>
+                    <p>Premium athletic footwear for champions</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#catalog">Catalog</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>Email: agsportinggoodsllc@gmail.com</p>
+                    <p>Phone 1: 832-814-2961</p>
+                    <p>Phone 2: 214-609-4084</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 AGIA Sports. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Product Modal -->
+    <div id="product-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-body">
+                <img id="modal-image" src="" alt="">
+                <div class="modal-info">
+                    <h3 id="modal-title"></h3>
+                    <p id="modal-price"></p>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
